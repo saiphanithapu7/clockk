@@ -1,0 +1,51 @@
+<html lang="en">
+    <head>
+        <style>
+            body{
+                text-align: center;
+                background-color: yellow;
+                
+            }
+            #clock{
+                background-color: blue;
+                border: 10px dotted red;
+                font-style: italic;
+                margin: 20px;
+                padding: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="clock"></h1>
+        <script>
+            function myclock(){
+                let now=new Date();
+                let h=now.getHours();
+                let m= now.getMinutes();
+                let s=now.getSeconds();
+                let mer="AM";
+                if(h>12){
+                    h=h-12;
+                }
+                if(h>=12)
+                mer="PM";
+            if(h<10)
+            {
+                h="0"+h;
+            }
+            if(m<10)
+            {
+                m="0"+m;
+            }
+            if(s<10)
+            {
+                s="0"+s;
+            }
+            document.getElementById("clock").innerHTML=h+":"+m+":"+s+":"+mer;
+        }
+        setInterval(myclock,1000);
+          myclock();
+        </script>
+      
+    </body>
+</html>
